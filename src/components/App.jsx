@@ -1,6 +1,6 @@
 import Header from './header/header';
 import { lazy, Suspense } from 'react';
-import { Routes, Route, Outlet, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { MainStyled } from './GlobalStyled';
 
 const HomePage = lazy(() => import('pages/home/home'));
@@ -20,9 +20,7 @@ export const App = () => {
           element={
             <>
               <Header />
-              <MainStyled>
-                <Outlet />
-              </MainStyled>
+              <MainStyled></MainStyled>
             </>
           }
         >
@@ -33,14 +31,12 @@ export const App = () => {
             element={
               <>
                 <MovieById />
-                <Outlet />
               </>
             }
           >
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>
-          {/* Використання "*" в підмаршруті, щоб відловлювати всі інші маршрути */}
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>

@@ -1,4 +1,5 @@
 import { HeaderStyled, NavStyled, LinkStyled } from './header.styled';
+import { Outlet } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
           <LinkStyled to={'/movies'}>Movies</LinkStyled>
         </NavStyled>
       </HeaderStyled>
+      <Outlet />
     </>
   );
 };

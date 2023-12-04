@@ -1,4 +1,4 @@
-import { Link, useLocation, useParams } from 'react-router-dom';
+import { Outlet, Link, useLocation, useParams } from 'react-router-dom';
 import {
   LinkStyled,
   MovieContent,
@@ -108,6 +108,7 @@ const MovieById = () => {
               </li>
             </AdditionalList>
           </AdditionalContent>
+          <Outlet />
         </>
       )}
     </>
